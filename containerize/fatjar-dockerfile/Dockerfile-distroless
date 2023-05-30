@@ -1,0 +1,6 @@
+FROM gcr.io/distroless/java17-debian11
+WORKDIR application
+ARG JAR_FILE=target/*.jar
+COPY ${JAR_FILE} application.jar
+CMD ["application.jar"]
+

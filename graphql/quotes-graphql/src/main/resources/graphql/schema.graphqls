@@ -1,0 +1,30 @@
+
+type Query {
+    randomQuote : Quote
+    allQuotes: [Quote]
+    allAuthors: [Author]
+}
+
+type Mutation {
+    addAuthor(id:Int, name:String,field:Field,wikipediaUrl:String):Author
+}
+type Quote {
+    id : ID!,
+    quote : String
+    author : Author
+}
+
+type Author {
+    name : String
+    wikipediaUrl: String
+    field: Field
+}
+
+enum Field {
+    UNKNOWN
+    POLITICS
+    PHILOSOPHY
+    SPORTS
+    SCIENCE
+    ACTING
+}
